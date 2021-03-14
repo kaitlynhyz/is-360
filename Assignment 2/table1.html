@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Table 1</title>
+  <link rel="stylesheet" href="./style.css" type="text/css" />
+</head>
+
+<body>
+
+  <hr />
+
+  <header>
+    <nav>
+    <table id="nav">
+      <thead>
+      <tr>
+          <th><a href="index.html">Home</a></th>
+          <th><a href="referencemanual.html">Reference Manual</a></th>
+          <th><a href="table2.html">Table 2</a></th>
+    </tr>
+    </thead>
+    </table>
+    </nav>
+  </header>
+
+  <hr />
+
+<main>
+
+  <h2>Table 1</h2>
+
+  <table id="table1">
+  <thead>
+
+    <!--Header-->
+    <tr>
+      <td rowspan="2"></td>
+      <th scope="colgroup">Substrates reaction<sup>-1</sup></th>
+      <th colspan="2" scope="colgroup" class="header">-1.9&#8451;</th>
+      <th colspan="2" scope="colgroup" class="header">+25&#8451;</th>
+      <th colspan="2" scope="colgroup" class="header">+122&#8451;</th>
+    </tr>
+
+    <!--Subheader-->
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">1 atm</th>
+      <th scope="col">1000 atm</th>
+      <th scope="col">1 atm</th>
+      <th scope="col">1000 atm</th>
+      <th scope="col">1 atm</th>
+      <th scope="col">1000 atm</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <!--Row: A-->
+    <tr>
+      <th scope="row" class="span" colspan="8">A</th>
+    </tr>
+
+    <!--Row: H2-CO2-->
+    <tr>
+      <th scope="row" class="formula">H<sub>2</sub>-CO<sub>2</sub></th>
+      <td>4</td>
+      <td>11.3</td>
+      <td>10.3</td>
+      <td>18.1</td>
+      <td>17.1</td>
+      <td>42.6</td>
+      <td>41.7</td>
+    </tr>
+
+    <!--Row: CO-->
+    <tr>
+      <th scope="row" class="formula">CO</th>
+      <td>4</td>
+      <td>ND</td>
+      <td>ND</td>
+      <td><strong>-13.7</strong></td>
+      <td>ND</td>
+      <td>ND</td>
+      <td>ND</td>
+    </tr>
+
+    <!--Row: CO+H2-->
+    <tr>
+      <th scope="row" class="formula">CO+H<sub>2</sub></th>
+      <td>2</td>
+      <td>ND</td>
+      <td>ND</td>
+      <td>-1.28</td>
+      <td>ND</td>
+      <td>ND</td>
+      <td>ND</td>
+    </tr>
+
+    <!--Row: Formate-->
+    <tr>
+      <th scope="row" class="formula">Formate</th>
+      <td>4</td>
+      <td>6.00</td>
+      <td>5.62</td>
+      <td>10.7</td>
+      <td>10.4</td>
+      <td>27.9</td>
+      <td>27.5</td>
+    </tr>
+
+    <!--Row: Formate+H2-->
+    <tr>
+      <th scope="row" class="formula">Formate+H<sub>2</sub></th>
+      <td>2</td>
+      <td>12.1</td>
+      <td>10.8</td>
+      <td>23.1</td>
+      <td>21.8</td>
+      <td>62.9</td>
+      <td>61.6</td>
+    </tr>
+
+    <!--Row: Lactate-->
+    <tr>
+      <th scope="row" class="formula">Lactate</th>
+      <td>2</td>
+      <td><strong>-49.8</strong></td>
+      <td><strong>-49.3</strong></td>
+      <td><strong>-50.5</strong></td>
+      <td><strong>-50.0</strong></td>
+      <td><strong>-53.0</strong></td>
+      <td><strong>-52.5</strong></td>
+    </tr>
+  </tbody>
+  </table>
+
+
+  <hr />
+
+  <img src="img/index.PNG" alt="validation report for index page">
+</main>
+</body>
+</html>
