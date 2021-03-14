@@ -1,0 +1,67 @@
+/*
+  Color Sheme:
+  Dark Blue: #17252A
+  Blue: #5B9AA0
+  Gray: #D6D4E0
+  Light Purple: #B8A9C9
+  Dark Purple: #622569
+*/
+body{
+  font-family: sans-serif;
+}
+
+a{
+  color: #17252A;
+}
+
+code{
+  font-family: courier monospace;
+  color: #622569;
+}
+
+#nav{
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #5B9AA0;
+}
+
+#nav th, #nav td{
+  border: 1px solid #D6D4E0;
+  padding: 8px;
+}
+
+/* Reference Manual*/
+#bookmark li{
+  display: inline;
+  padding: 8px;
+  background-color: #B8A9C9;
+}
+
+/* Table 1*/
+#table1{
+  width: 100%;
+}
+
+#table1 td{
+  text-align: center;
+}
+
+#table1 th{
+  text-align: center;
+  padding: 5px;
+}
+
+#table1 .header{
+  border-bottom: 1px solid;
+}
+
+#table1 .span{
+  background-color: #c1c1c1;
+  border-top: 1px solid;
+  text-align: left;
+}
+
+#table1 .formula{
+  text-align: left;
+}
+/* Table 2 */
