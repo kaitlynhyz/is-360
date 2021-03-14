@@ -6,6 +6,7 @@
   Light Purple: #B8A9C9
   Dark Purple: #622569
 */
+
 body{
   font-family: sans-serif;
 }
@@ -15,10 +16,13 @@ a{
 }
 
 code{
-  font-family: courier monospace;
-  color: #622569;
+  background-color: #eeeeee;
+  border-radius: 3px;
+  font-family: courier, monospace;
+  padding: 0 3px;
 }
 
+/* Menu */
 #nav{
   border-collapse: collapse;
   width: 100%;
@@ -64,4 +68,57 @@ code{
 #table1 .formula{
   text-align: left;
 }
-/* Table 2 */
+
+/* Table 2 Top*/
+#table2-top{
+  width: 100%;
+  border: 1px solid #eeeeee;
+}
+
+#table2-top th.header{
+  text-align: left;
+  background-color: #eeeeee;
+}
+
+#table2-top th.subheader{
+  text-align: left;
+  color: #135897;
+  background-color: #eeeeee;
+}
+
+#table2-top th.third-header{
+  text-align: left;
+  background-color: #eeeeee;
+}
+
+/* Table 2 Bottom */
+#table2-bottom{
+  width: 100%;
+  border: 1px solid #eeeeee;
+}
+
+#table2-bottom th.header{
+  text-align: left;
+  background-color: #eeeeee;
+}
+
+#table2-bottom th.subheader{
+  text-align: left;
+  color: #135897;
+  background-color: #eeeeee;
+}
+
+#table2-bottom td{
+  text-align: center;
+  padding: 5px;
+}
+
+#table2-bottom td.high{
+  color: #f05053;
+  padding-top: 10px;
+}
+
+#table2-bottom td.low{
+  color: #4caee6;
+  padding-top: 10px;
+}
