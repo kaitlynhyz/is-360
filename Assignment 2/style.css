@@ -75,20 +75,34 @@ code{
   border: 1px solid #eeeeee;
 }
 
-#table2-top th.header{
+#table2-top td.header{
   text-align: left;
   background-color: #eeeeee;
 }
 
-#table2-top th.subheader{
+#table2-top td.subheader{
   text-align: left;
+  font-size: 20px;
   color: #135897;
   background-color: #eeeeee;
 }
 
-#table2-top th.third-header{
+#table2-top td.left{
   text-align: left;
-  background-color: #eeeeee;
+}
+
+#table2-top th.ftemp{
+  text-align: left;
+  font-size: 40px;
+}
+
+#table2-top td.middle{
+  text-align: center;
+}
+
+#table2-top td.link{
+  text-decoration: underline;
+  color: #4b90cc;
 }
 
 /* Table 2 Bottom */
