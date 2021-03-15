@@ -43,16 +43,34 @@
   <article>
 
       <h2 id="Abstract">Abstract</h2>
-      <p>The anchor <code>a</code> tag --. Anchor tags can be used to create links to other pages and bookmarks to different sections of the page. write a short paragraph or two that summarized the purpose of the anchor tag.</p>
+      <p>The anchor <code>a</code> tag defines a hyperlink. When the anchor tag is used with its href attribute, it creates a hyperlink to webpages, files, email address, and/or locations on the same page of the website. Anchor tags can be used to create links to other pages and bookmarks to different sections of the page.</p>
 
       <h2 id="Details">Details</h2>
+      <p>Attributes applicable to the anchor tag:</p>
       <ul>
-        <li>create a bulleted list that describes the purpose of the attributes applicable to the anchor tag</li>
+        <li><code>href</code> - Specifies the URL of the page the link goes to. If the <code>href</code> attribute is not present, the <code>a</code> tag will not be a hyperlink
+          <ul>
+            <li><code>tel:</code> - Used to initiate a phone call with a link</li>
+            <li><code>mailto:</code> - Activates the default mail client on the computer for sending an e-mail</li>
+            <li><code>#section</code> - Sections of a page within fragment URLs</li>
+          </ul>
+        <li><code>download</code> - Specifies that the file will be downloaded when a user clicks on the hyperlink</li>
       </ul>
 
+
       <h2 id="Examples">Examples</h2>
-      <p>create two or three examples that demonstrate the use of absolute and relative references</p>
-      <code>a href="MyPage.html</code>
+      <p><strong>Absolute references</strong></p>
+      <p>An absolute reference is used to refer to a site somewhere else on the internet. The absolute path contains a complete URL to the website.</p>
+      <ol>
+        <li><code>a href = <em>"http://www.google.com"</em></code></li>
+        <li><code>a href = <em>"http://www.linkedin.com/in/kaitlynzhang"</em></code></li>
+      </ol>
+      <p><strong>Relative references</strong></p>
+      <p>A relative reference points to a file within a website. A relative link only includes the name of a specific file or page to the current path.</p>
+      <ol>
+        <li><code>a href = <em>"index.html"</em></code></li>
+        <li><code>a href = <em>"../referencemanual.html"</em></code></li>
+      </ol>
 
   </article>
 
@@ -62,23 +80,3 @@
 </main>
 </body>
 </html>
-
-<!-- content should be correct and informative!
-  / content of this page should contain a reference page for an HTML element
-    - your reference page should describe the <a> tag and its attributes and provide examples of their use
-    - instruct how to create an <a> tag, list it's attributes, and how to use them
-  - below the menu, create 3 bookmarks that will navigate to the 3 sections of the page (Abstract, Detatils, Examples)
-    - bookmarks should all appear on the same line
-    - put another horizontal rule below the bookmarks
-  - wrap the page content as a semantic <article>. create level 1 heading for the article. create level 2 headings for each of the sections
-  - create sections titled Abstract, Details, and Examples
-  - Abstract Section: write a short paragraph or two that summarizes the purpose of the anchor tag. Mention how it is used to create links to other pages and bookmarks
-  - Details Section: create a nulleted list that describes the purpose of the attributes applicable to the anchor tag
-  - Examples Section: create 2 or 3 examples that demonstrate the use of absolute and relative references. feel free to create additional exampels as you see fit
-    - set any code using mono-space courier font. placeholder text should appear in italics
-  - format page such that the element and attribute names appear in a mono-space courier typeface. <code>. use the semantic <em> and <<strong> tags as you see fit
-  - put any placeholder text in italics. again, use, <em> for italics
-  - you will need to use anmed entities for the less-than and greater-than symbols
-
-
--->
