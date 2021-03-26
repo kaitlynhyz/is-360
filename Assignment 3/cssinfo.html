@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Info</title>
+  <link rel="stylesheet" href="./css/colors.css" type="text/css" />
+  <link rel="stylesheet" href="./css/global.css" type="text/css" />
+</head>
+
+<body>
+
+  <header>
+        <nav>
+          <div class="menu">
+            <a href="index.html">Home</a>
+            <a class="active" href="cssinfo.html">CSS Info</a>
+            <a href="tabular.html">Tabular</a>
+          </div>
+        </nav>
+
+        <h1 id="title">CSS Snapshot 2018</h1>
+
+        <h2>
+            <span>
+                W3C Working Group Note,
+                <time datetime="2019-01-22">22 January 2019</time>
+            </span>
+        </h2>
+
+        <ul class="breadcrumb">
+          <li><a href="#">assignment3</a></li>
+          <li><a href="#">kaitlynz</a></li>
+          <li>css info</li>
+        </ul>
+
+      <div class="bookmark">
+        <a href="#whatis"><span>What is CSS?</span></a>
+        <a href="#abstract"><span>Abstract</span></a>
+        <a href="#status"><span>Status</span></a>
+        <a href="#introduction"><span>Introduction</span></a>
+        <a href="#csslevels"><span>CSS Levels</span></a>
+        <a href="#styles"><span>Style Examples</span></a>
+      </div>
+    </header>
+
+    <content>
+        <h2 id="#whatis">What is CSS?</h2>
+        <p>CSS is the language for describing the presentation of Web pages, including colors,
+        layout, and fonts. It allows one to adapt the presentation to different types of
+        devices, such as large screens, small screens, or printers. CSS is independent of
+        HTML and can be used with any XML-based markup language. The separation of HTML
+        from CSS makes it easier to maintain sites, share style sheets across pages, and
+        tailor pages to different environments. This is referred to as the separation
+        of structure (or: content) from presentation.</p>
+
+        <h2 id="#abstract">Abstract</h2>
+        <p>
+            This document collects together into one definition all the specs that together form the
+            current state of Cascading Style Sheets (CSS) as of 2018. The primary audience is CSS
+            implementers, not CSS authors, as this definition includes modules by specification
+            stability, not Web browser adoption rate.
+        </p>
+        <p>
+            CSS is a language for describing the rendering of structured documents (such as
+            HTML and XML) on screen, on paper, etc.
+        </p>
+
+        <h2 id="status">Status of this document</h2>
+
+        <p>
+            <em>
+                This section describes the status of this document at the time of its publication.
+                Other documents may supersede this document. A list of current W3C publications and
+                the latest revision of this technical report can be found in the
+                <a href="https://www.w3.org/TR/">W3C technical reports index</a>
+                at https://www.w3.org/TR/.
+            </em>
+        </p>
+        <p>
+            Publication as a Working Group Note does not imply endorsement by the W3C Membership.
+            This is a draft document and may be updated, replaced or obsoleted by other documents
+            at any time. It is inappropriate to cite this document as other than work in progress.
+        </p>
+        <p>
+            This Note was produced by the
+            <a href="http://www.w3.org/Style/CSS/members">CSS Working Group</a>.
+        </p>
+
+        <h2>Introduction</h2>
+
+        <p>
+            When the first CSS specification was published,
+            all of CSS was contained in one document that defined CSS Level 1.
+            CSS Level 2 was defined also by a single, multi-chapter document.
+            However for CSS beyond Level 2,
+            the CSS Working Group chose to adopt a modular approach,
+            where each module defines a part of CSS,
+            rather than to define a single monolithic specification.
+            This breaks the specification into more manageable chunks
+            and allows more immediate, incremental improvement to CSS.
+        </p>
+        <p>
+            Since different CSS modules are at different levels of stability,
+            the CSS Working Group has chosen to publish this profile
+            to define the current scope and state of Cascading Style Sheets as of mid 2018.
+            This profile includes only specifications that we consider stable <em>and</em> for which we
+            have enough implementation experience that we are sure of that stability.
+        </p>
+
+        <p class="note" role="note">
+            <span>Note:</span> This is not intended to be a CSS Desktop Browser Profile:
+            inclusion in this profile is based on feature stability only
+            and not on expected use or Web browser adoption.
+            This profile defines CSS in its most complete form.
+        </p>
+        <p class="note" role="note">
+            <span>Note:</span> Although we don’t anticipate significant changes to the
+            specifications that form this snapshot,
+            their inclusion does not mean they are frozen.
+            The Working Group will continue to address problems as they are found in these specs.
+            Implementers should monitor
+            <a href="https://lists.w3.org/Archives/Public/www-style/">www-style</a> and/or
+            the <a href="https://www.w3.org/blog/CSS">CSS Working Group Blog</a> for any resulting changes, corrections, or clarifications.
+        </p>
+
+        <p><em>This section is non-normative.</em></p>
+        <p>
+            In the <a href="https://www.w3.org/Consortium/Process/">W3C Process</a>,
+            a Recommendation-track document passes through three levels of stability,
+            summarized below:
+        </p>
+        <dl>
+            <dt>Working Draft (WD)
+            <dd>
+                <p>
+                    This is the design phase of a W3C spec.
+                    The WG iterates the spec in response to internal and external feedback.
+                </p>
+                <p>
+                    The first official Working Draft is designated the “First Public Working Draft” (FPWD).
+                    In the CSSWG, publishing FPWD indicates that the Working Group as a whole
+                    has agreed to work on the module, roughly as scoped out and proposed in the
+                    editor’s draft.
+                </p>
+                <p>
+                    The transition to the next stage is sometimes called “Last Call Working
+                    Draft” (LCWD) phase. The CSSWG transitions Working Drafts once we have resolved all known issues,
+                    and can make no further progress without feedback from building tests and
+                    implementations.
+                </p>
+                <p>
+                    This “Last Call for Comments” sets a deadline for reporting any outstanding
+                    issues,
+                    and requires the WG to specially track and address incoming feedback.
+                    The comment-tracking document is the Disposition of Comments (DoC).
+                    It is submitted along with an updated draft for the Director’s approval,
+                    to demonstrate wide review and acceptance.
+                </p>
+            <dt>Candidate Recommendation (CR)
+            <dd>
+                This is the testing phase of a W3C spec.
+                Notably, this phase is about using tests and implementations to test the
+                specification: it is not about testing the implementations.
+                This process often reveals more problems with the spec,
+                and so a Candidate Recommendation will morph over time in response to
+                implementation and testing feedback, though usually less so than during the
+                design phase (WD).
+                <p>
+                    Demonstration of two correct, independent implementations of each feature
+                    is required to exit CR, so in this phase the WG builds a test suite and
+                    generates implementation reports.
+                </p>
+                <p>
+                    The transition to the next stage is “Proposed Recommendation” (PR).
+                    During this phase the W3C Advisory Committee must approve the transition
+                    to REC.
+                </p>
+            <dt>Recommendation (REC)
+            <dd>
+                This is the completed state of a W3C spec and represents a maintenance phase.
+                At this point the WG only maintains an errata document
+                and occasionally publishes an updated edition that incorporates the errata back
+                into the spec.
+        </dl>
+
+        <h2 id="csslevels">CSS Levels</h2>
+
+        <p>
+            Cascading Style Sheets does not have versions in the traditional sense;
+            instead it has <strong>levels</strong>
+            Each level of CSS builds on the previous,
+            refining definitions and adding features. The feature set of each higher
+            level is a superset of any lower level, and the behavior allowed for a given
+            feature in a higher level is a subset of that allowed in the lower levels.
+            A user agent conforming to a higher level of CSS is thus also conformant to
+            all lower levels.
+        </p>
+        <dl>
+            <dt><dfn>CSS Level 1</dfn>
+            <dd>
+                The CSS Working Group considers the <a href="https://www.w3.org/TR/2008/REC-CSS1-20080411/">CSS1 specification</a> to be
+                obsolete. <a>CSS Level 1</a> is defined as all the features defined
+                in the CSS1 specification (properties, values, at-rules, etc), but using
+                the syntax and definitions in the <a href="https://www.w3.org/TR/CSS2/">CSS2.1 specification</a>.
+                <a href="https://www.w3.org/TR/css-style-attr/">CSS Style Attributes</a> defines its inclusion in
+                element-specific style attributes.
+            <dt><dfn>CSS Level 2</dfn>
+            <dd>
+                Although the <a href="https://www.w3.org/TR/2008/REC-CSS2-20080411/">CSS2 specification</a> is
+                technically a W3C Recommendation, it passed into the Recommendation stage
+                before the W3C had defined the Candidate Recommendation stage. Over time
+                implementation experience and further review has brought to light many problems
+                in the CSS2 specification, so instead of expanding an already
+                <a href="https://www.w3.org/Style/css2-updates/REC-CSS2-19980512-errata.html">
+                    unwieldy
+                    errata list
+                </a>, the CSS Working Group chose to define <cite>
+                    CSS Level 2 Revision 1
+                </cite> (CSS2.1). In case of any conflict between the two specs
+                CSS2.1 contains the definitive definition.
+                <p>
+                    Once CSS2.1 became Candidate Recommendation—effectively though not
+                    officially the same level of stability as CSS2—obsoleted the CSS2
+                    Recommendation.  Features in CSS2 that were dropped from CSS2.1 should be
+                    considered to be at the Candidate Recommendation stage, but note that many
+                    of these have been or will be pulled into a CSS Level 3 working draft, in
+                    which case that specification will, once it reaches CR, obsolete the
+                    definitions in CSS2.
+                </p>
+                <p>
+                    The <a href="https://www.w3.org/TR/CSS2/">CSS2.1 specification</a> defines
+                    <a>CSS Level 2</a> and the <a href="https://www.w3.org/TR/css-style-attr/">
+                        CSS
+                        Style Attributes specification
+                    </a> defines its inclusion in
+                    element-specific style attributes.
+                </p>
+            <dt><dfn>CSS Level 3</dfn>
+            <dd>
+                <a>CSS Level 3</a> builds on CSS Level 2 module by module, using the CSS2.1
+                specification as its core. Each module adds functionality and/or
+                replaces part of the CSS2.1 specification. The CSS Working Group
+                intends that the new CSS modules will not contradict the CSS2.1
+                specification: only that they will add functionality and refine
+                definitions. As each module is completed, it will be plugged in to
+                the existing system of CSS2.1 plus previously-completed modules.
+                <p>
+                    From this level on modules are levelled independently: for example
+                    Selectors Level 4 may well be completed before CSS Line Module Level 3.
+                    Modules with no <a>CSS Level 2</a> equivalent start at Level 1;
+                    modules that update features that existed in <span>CSS Level 2</span> start at Level 3.
+                </p>
+            <dt><dfn>CSS Level 4</dfn> and beyond
+            <dd>
+                There is no CSS Level 4.
+                Independent modules can reach level 4 or beyond,
+                but CSS the language no longer has levels.
+                ("CSS Level 3" as a term is used only to differentiate it from the previous monolithic versions.)
+        </dl>
+
+        <h2 id="styles">Styles</h2>
+
+        <h3><code>border</code> Style</h3>
+
+        <p>
+            <span>The <strong><code>border</code></strong> property sets an element's border.</span> It sets the
+            values of <a href="/en-US/docs/Web/CSS/border-width"
+                         title="The border-width shorthand CSS property sets the width of an element's border.">
+                <code>border-width</code>
+            </a>, <a href="/en-US/docs/Web/CSS/border-style"
+                     title="The border-style shorthand CSS property sets the line style for all four sides of an element's border.">
+                <code>border-style</code>
+            </a>, and <a href="/en-US/docs/Web/CSS/border-color"
+                         title="The border-color shorthand CSS property sets the color of an element's border.">
+                <code>border-color</code>
+            </a>.
+        </p>
+
+        <h4>Syntax</h4>
+
+        <pre>/* style */
+              border: solid;
+
+              /* width | style */
+              border: 2px dotted;
+
+              /* style | color */
+              border: outset #f33;
+
+              /* width | style | color */
+              border: medium dashed green;
+
+              /* Global values */
+              border: inherit;
+              border: initial;
+              border: unset;
+        </pre>
+
+
+        <p>
+            The <code>border</code> property may be specified using one, two, or three of the values
+            listed below. The order of the values does not matter.
+        </p>
+
+        <div class="note">
+            <p>
+                <strong>Note:</strong> The border will be invisible if its style is not defined. This
+                is because the style defaults to <code>none</code>.
+            </p>
+        </div>
+
+
+        <h3 id="Values" name="Values">Values</h3>
+
+        <dl>
+            <dt id="&lt;line-width>"><code>&lt;line-width&gt;</code></dt>
+            <dd>
+                Sets the thickness of the border. Defaults to <code>medium</code> if absent.
+                See <a href="/en-US/docs/Web/CSS/border-width"
+                       title="The border-width shorthand CSS property sets the width of an element's border."><code>border-width</code></a>.
+            </dd>
+            <dt id="&lt;line-style>"><code>&lt;line-style&gt;</code></dt>
+            <dd>
+                Sets the style of the border. Defaults to <code>none</code> if absent.
+                See <a href="/en-US/docs/Web/CSS/border-style"
+                       title="The border-style shorthand CSS property sets the line style for all four sides of an element's border."><code>border-style</code></a>.
+            </dd>
+            <dt id="&lt;color>">
+                <a href="/en-US/docs/Web/CSS/color_value"
+                   title="The &lt;color> CSS data type represents a color in the sRGB color space. A &lt;color> may also include an
+                    alpha-channel transparency value, indicating how the color should composite with its background."><code>&lt;color&gt;</code></a>
+            </dt>
+            <dd>
+                Sets the color of the border. Defaults to <code>currentcolor</code> if absent.
+                See <a href="/en-US/docs/Web/CSS/border-color"
+                       title="The border-color shorthand CSS property sets the color of an
+                       element's border."><code>border-color</code></a>.
+            </dd>
+        </dl>
+    </content>
+
+    <footer>
+      <img src="images/clownery.png" alt="logo">
+      <p>Kaitlyn Zhang &copy;</p>
+    </footer>
+
+    <hr />
+
+  <img src="img/index.PNG" alt="validation report for index page">
+</body>
+</html>

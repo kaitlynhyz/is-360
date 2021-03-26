@@ -1,0 +1,93 @@
+/*
+Color Scheme
+#EEEEEE
+#F9FAF2
+#BAC765
+#86AD53
+#588879
+#132F26
+*/
+
+/* Menu */
+.menu{
+  background: #132F26;
+  overflow: hidden;
+  box-shadow: 5px 10px #86AD53;
+}
+
+.menu a{
+  float: left;
+  color: #F9FAF2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.menu a:hover{
+  background-color: #BAC765;
+  color: #132F26;
+}
+
+.menu a.active{
+  background-color: #86AD53;
+  color: #F9FAF2;
+}
+
+/* Header - Breadcrumb */
+/*Style the list*/
+ul.breadcrumb {
+  padding: 10px 16px;
+  list-style: none;
+  background-color: #EEEEEE;
+}
+
+/*Display list items side by side*/
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+  color: #588879;
+}
+
+/*Add a slash symbol before each list item*/
+ul.breadcrumb li::before {
+  padding: 8px;
+  color: #132F26;
+  content: " / ";
+  text-decoration: none;
+}
+
+/*Add color to links*/
+ul.breadcrumb li a {
+  color: #132F26;
+  text-decoration: none;
+}
+
+/*Add color on mouse hover*/
+ul.breadcrumb li a:hover {
+  color: #588879;
+  text-decoration: none;
+}
+
+/*
+body{
+  margin: auto;
+  width: 1024px;
+}
+*/
+
+footer{
+  padding: 8px;
+  background-color: #588879;
+  border-left: 5px solid #86AD53;
+}
+
+.bookmark{
+  display: grid;
+}
+
+img{
+  width: 50px;
+  height: 50px;
+  float: left;
+}
