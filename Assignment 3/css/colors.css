@@ -1,0 +1,51 @@
+/*
+Color Scheme
+#EEEEEE
+#F9FAF2
+#BAC765
+#86AD53
+#588879
+#132F26
+*/
+
+body{
+  background-color: #F9FAF2;
+  text-align: center;
+}
+
+h1{
+  color: #588879;
+}
+
+h2{
+  color: #86AD53;
+}
+
+h3{
+  color: #BAC765;
+}
+
+strong, span{
+  color: #132F26;
+  font-weight: bold;
+}
+
+pre{
+  color: #EEEEEE;
+  background-color: #588879;
+  font-family: courier, monospace;
+}
+
+.note{
+    border-left: 5px solid #132F26;
+    color: #EEEEEE;
+    background-color: #86AD53;
+}
+
+p a:link, dd a:link{
+  color: #132F26;
+}
+
+p a:hover, dd a:hover{
+  color: #588879;
+}

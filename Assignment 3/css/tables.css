@@ -1,0 +1,44 @@
+/*
+Color Scheme
+#EEEEEE
+#F9FAF2
+#BAC765
+#86AD53
+#588879
+#132F26
+*/
+
+h1{
+  font-family: tahoma, monospace;
+  text-align: left;
+}
+
+table, tr, th, td{
+  color: #132F26;
+  font-family: tahoma, monospace;
+  background-color: #EEEEEE;
+  border: 2px solid #86AD53;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.stackoverflow{
+  color: #F9FAF2;
+  background-color: #588879;
+  padding: 2px;
+  border-radius: 0px 10px 10px 0px;
+}
+
+.git{
+  color: #F9FAF2;
+  background-color: #86AD53;
+  padding: 2px;
+  border-radius: 0px 10px 10px 0px;
+}
+
+.pypl{
+  color: #F9FAF2;
+  background-color: #BAC765;
+  padding: 2px;
+  border-radius: 0px 10px 10px 0px;
+}
