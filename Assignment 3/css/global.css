@@ -8,7 +8,6 @@ Color Scheme
 #132F26
 */
 
-<<<<<<< HEAD
 h1::first-letter{
   font-size: 150%;
 }
@@ -25,8 +24,6 @@ h4::first-letter{
   font-size: 150%;
 }
 
-=======
->>>>>>> fddb42452e367528e9d95f6eb760b6f987f8ef35
 /* Menu */
 .menu{
   background: #132F26;
@@ -35,11 +32,7 @@ h4::first-letter{
 }
 
 .menu a{
-<<<<<<< HEAD
   float: center;
-=======
-  float: left;
->>>>>>> fddb42452e367528e9d95f6eb760b6f987f8ef35
   color: #F9FAF2;
   text-align: center;
   padding: 14px 16px;
@@ -92,27 +85,17 @@ ul.breadcrumb li a:hover {
   text-decoration: none;
 }
 
-<<<<<<< HEAD
-=======
 /*
->>>>>>> fddb42452e367528e9d95f6eb760b6f987f8ef35
 body{
   margin: auto;
   width: 1024px;
 }
-<<<<<<< HEAD
-
+*/
 
 footer{
   padding: 8px;
   padding-right: 80px;
   padding-left: 80px;
-=======
-*/
-
-footer{
-  padding: 8px;
->>>>>>> fddb42452e367528e9d95f6eb760b6f987f8ef35
   background-color: #588879;
   border-left: 5px solid #86AD53;
 }
