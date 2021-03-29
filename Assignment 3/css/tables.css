@@ -9,17 +9,34 @@ Color Scheme
 */
 
 h1{
-  font-family: tahoma, monospace;
+  font-family: tahoma;
   text-align: left;
 }
 
-table, tr, th, td{
+table{
   color: #132F26;
-  font-family: tahoma, monospace;
+  font-family: tahoma;
   background-color: #EEEEEE;
   border: 2px solid #86AD53;
   border-collapse: collapse;
   text-align: left;
+}
+
+thead{
+  background-color:#132F26;
+  color: #F9FAF2;
+  border: 2px solid #86AD53;
+}
+
+th, td{
+  border: 2px solid #86AD53;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+tr:nth-child(even)
+{
+  background: #F9FAF2;
 }
 
 .stackoverflow{
