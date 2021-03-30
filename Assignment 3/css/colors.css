@@ -40,6 +40,8 @@ pre{
     border-left: 5px solid #132F26;
     color: #EEEEEE;
     background-color: #86AD53;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 p a:link, dd a:link{
