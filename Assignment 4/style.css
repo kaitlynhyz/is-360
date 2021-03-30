@@ -108,6 +108,19 @@ footer img{
   float: left;
 }
 
-.bookmark{
+
+.columns{
   display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.left{
+  background-color: #EEEEEE;
+  padding: 8px;
+}
+
+.right{
+  background-color: #EEEEEE;
+  padding: 8px;
 }
