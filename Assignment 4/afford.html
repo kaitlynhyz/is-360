@@ -5,6 +5,18 @@
   <meta charset="utf-8">
   <title>Afford</title>
   <link rel="stylesheet" href="./style.css" type="text/css" />
+
+  <script>
+  /*
+    var income = document.income * .29
+    var expense = document.expense * .39
+  */
+
+    function affordFunction(){
+      document.getElementById("affordOutput").innerHTML = "Your maximum affordable monthly payment:"
+    }
+
+  </script>
 </head>
 
 <body>
@@ -30,6 +42,7 @@
     <div class="left">
       <p>Estimate the maximum affordable house payment based on your family's gross income and expenses.</p>
     </div>
+
     <div class="right">
       <form class="afford">
         <p>
@@ -41,12 +54,13 @@
           <input type="number" name="expenses">
         </p>
       </form>
+
+      <!--Display value in another control (widget)-->
+      <button onclick="affordFunction()">Calculate</button>
+      <p id="affordOutput"></p>
     </div>
   </div>
 
-  <p>
-    <output name="result"></output>
-  </p>
   <footer>
     <img src="images/clownery.png" alt="logo">
     <p>Kaitlyn Zhang &copy;</p>

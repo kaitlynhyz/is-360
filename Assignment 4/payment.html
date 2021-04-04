@@ -26,7 +26,31 @@
     </ul>
   </header>
 
+  <div class="columns">
+    <div class="left">
+      <p>Calculate the payment on a loan.</p>
+    </div>
 
+    <div class="right">
+      <form class="payment">
+        <p>
+          <label>Initial Loan Amount (Dollars):</label><br />
+          <input type="number" name="loan">
+        </p>
+        <p>
+          <label>Number of Periods (Years):</label><br />
+          <input type="number" name="periods">
+        </p>
+        <p>
+          <label>Interest (Years):</label><br />
+          <input type="number" name="interestrate">
+        </p>
+
+        <button onclick="payFunction()">Calculate Payment Amount (Monthly)</button>
+        <p id="payOutput"></p>
+      </form>
+    </div>
+  </div>
 
   <footer>
     <img src="images/clownery.png" alt="logo">

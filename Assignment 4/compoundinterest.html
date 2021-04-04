@@ -26,7 +26,33 @@
     </ul>
   </header>
 
+  <div class="columns">
+    <div class="left">
+      <p>Calculate the compound interest on an investment.</p>
+    </div>
 
+    <div class="right">
+      <form class="compoundinterest">
+        <p>
+          <label>Initial Investment Amount:</label>
+          <input type="number" name="initialinvestment">
+        </p>
+        <p>
+          <label>Number of Periods:</label>
+          <input type="number" name="periods">
+        </p>
+        <p>
+          <label>Interest Rate Per Period:</label>
+          <input type="number" name="interestrate">
+        </p>
+
+        <button onclick="fvFunction()">Calculate Compound Interest</button>
+        <p id="fvOutput"></p>
+      </form>
+
+
+    </div>
+  </div>
 
   <footer>
     <img src="images/clownery.png" alt="logo">
