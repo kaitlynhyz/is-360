@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="./css/style.css" type="text/css" />
 
   <script>
-  
+
     const formatter = new Intl.NumberFormat('en-US',{
       style: 'currency',
       currency: 'USD',
@@ -20,12 +20,12 @@
     }
 
     function calculate(){
-      var value = parseFloat(document.getElementById("a").value);
-      var interest = parseFloat(document.getElementById("b").value);
-      var rate = parseFloat(document.getElementById("c").value);
+      var value = parseFloat(document.getElementById("pv").value);
+      var interest = parseFloat(document.getElementById("rate").value);
+      var rate = parseFloat(document.getElementById("nper").value);
       var fvalue = FV(value, interest, rate);
       var fv = fvalue.toFixed(2);
-      document.getElementById('result').textContent = "The future value is " + fv;
+      document.getElementById('result').textContent = "The compound interest is $" + fv;
     }
   </script>
 </head>
@@ -34,7 +34,7 @@
 
   <nav>
     <div class="menu">
-      <a href="index.html">Home</a>p
+      <a href="index.html">Home</a>
       <a href="afford.html">Afford</a>
       <a class="active" href="compundinterest.html">Compound Interest</a>
       <a href="payment.html">Payment</a>
@@ -58,21 +58,23 @@
       <form class="compoundinterest">
         <p>
           <label>Initial Investment Amount:</label>
-          <input type="number" id="a">
+          <input type="number" id="pv">
         </p>
         <p>
           <label>Number of Periods:</label>
-          <input type="number" id="c">
+          <input type="number" id="nper">
         </p>
         <p>
           <label>Interest Rate Per Period:</label>
-          <input type="number" id="b">
+          <input type="number" id="rate">
         </p>
       </form>
 
 
       <button onclick="calculate()">Calculate Compound Interest</button>
-      <p id="result"></p>
+      <br />
+      <br />
+      <label id="result"></label>
 
     </div>
   </div>
