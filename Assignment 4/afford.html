@@ -7,13 +7,46 @@
   <link rel="stylesheet" href="./css/style.css" type="text/css" />
 
   <script>
-  /*
-    var income = document.income * .29
-    var expense = document.expense * .39
-  */
 
     function affordFunction(){
+
+    /*  var errorFlag = false; */
+
+      var income = parseFloat(document.getElementById("income").value);
+      var expense = parseFloat(document.getElementById("expense").value);
+      var result = document.getElementById("result");
+
+/*
+      if (isNaN(income)){
+        result.value = "Error: Income is not a number. \n"
+        errorFlag = true
+      }
+
+      if (isNaN(expense)){
+        result.value += "Error: Expense is not a number. \n"
+        errorFlag = true
+      }
+
+      if (errorFlag){
+        return;
+      }
+      else {
+        result.value = "";
+      }
+*/
+      var stringbuffer = "";
+      var grossmonthlyincome = income;
+      var totalexpense = (income - expense)
+
+      for (x = 1; x <= expense; x++){
+        grossmonthlyincome -= totalexpense;
+        grossmonthlyincomeformatted = formatter.format(grossmonthlyincome);
+        stringbuffer += "Your maximum affordable monthly payment: "
+      }
+
+      /*
       document.getElementById("affordOutput").innerHTML = "Your maximum affordable monthly payment:"
+      */
     }
 
   </script>
@@ -57,7 +90,9 @@
 
       <!--Display value in another control (widget)-->
       <button onclick="affordFunction()">Calculate</button>
-      <p id="affordOutput"></p>
+      <br />
+      <br />
+      <textarea id="result"></textarea>
     </div>
   </div>
 

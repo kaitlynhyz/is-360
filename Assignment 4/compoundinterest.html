@@ -5,13 +5,36 @@
   <meta charset="utf-8">
   <title>Compound Interest</title>
   <link rel="stylesheet" href="./css/style.css" type="text/css" />
+
+  <script>
+  
+    const formatter = new Intl.NumberFormat('en-US',{
+      style: 'currency',
+      currency: 'USD',
+    })
+
+    function FV(PV, i ,n){
+      var x = (1+i/100)
+      var FV = PV*(Math.pow(x,n))
+      return FV;
+    }
+
+    function calculate(){
+      var value = parseFloat(document.getElementById("a").value);
+      var interest = parseFloat(document.getElementById("b").value);
+      var rate = parseFloat(document.getElementById("c").value);
+      var fvalue = FV(value, interest, rate);
+      var fv = fvalue.toFixed(2);
+      document.getElementById('result').textContent = "The future value is " + fv;
+    }
+  </script>
 </head>
 
 <body>
 
   <nav>
     <div class="menu">
-      <a href="index.html">Home</a>
+      <a href="index.html">Home</a>p
       <a href="afford.html">Afford</a>
       <a class="active" href="compundinterest.html">Compound Interest</a>
       <a href="payment.html">Payment</a>
@@ -35,21 +58,21 @@
       <form class="compoundinterest">
         <p>
           <label>Initial Investment Amount:</label>
-          <input type="number" name="initialinvestment">
+          <input type="number" id="a">
         </p>
         <p>
           <label>Number of Periods:</label>
-          <input type="number" name="periods">
+          <input type="number" id="c">
         </p>
         <p>
           <label>Interest Rate Per Period:</label>
-          <input type="number" name="interestrate">
+          <input type="number" id="b">
         </p>
-
-        <button onclick="fvFunction()">Calculate Compound Interest</button>
-        <p id="fvOutput"></p>
       </form>
 
+
+      <button onclick="calculate()">Calculate Compound Interest</button>
+      <p id="result"></p>
 
     </div>
   </div>
