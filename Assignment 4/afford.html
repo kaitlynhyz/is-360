@@ -8,46 +8,18 @@
 
   <script>
 
-    function affordFunction(){
+      const formatter = new Intl.NumberFormat('en-US',{
+        style: 'curreny',
+        currency: 'USD',
+      })
 
-    /*  var errorFlag = false; */
+      function calculate(){
+        var income = parseFloat(document.getElementById("income").value);
+        var expense = parseFloat(document.getElementById("expense").value);
+        var amount = --.toFixed(2);
 
-      var income = parseFloat(document.getElementById("income").value);
-      var expense = parseFloat(document.getElementById("expense").value);
-      var result = document.getElementById("result");
-
-/*
-      if (isNaN(income)){
-        result.value = "Error: Income is not a number. \n"
-        errorFlag = true
+        document.getElementById('result').textContent = "The maximum affordable payment is $" + amount;
       }
-
-      if (isNaN(expense)){
-        result.value += "Error: Expense is not a number. \n"
-        errorFlag = true
-      }
-
-      if (errorFlag){
-        return;
-      }
-      else {
-        result.value = "";
-      }
-*/
-      var stringbuffer = "";
-      var grossmonthlyincome = income;
-      var totalexpense = (income - expense)
-
-      for (x = 1; x <= expense; x++){
-        grossmonthlyincome -= totalexpense;
-        grossmonthlyincomeformatted = formatter.format(grossmonthlyincome);
-        stringbuffer += "Your maximum affordable monthly payment: "
-      }
-
-      /*
-      document.getElementById("affordOutput").innerHTML = "Your maximum affordable monthly payment:"
-      */
-    }
 
   </script>
 </head>
@@ -80,19 +52,20 @@
       <form class="afford">
         <p>
           <label>Gross Monthly Income:</label>
-          <input type="number" name="income">
+          <input type="number" id="income">
         </p>
         <p>
           <label>Total Expenses:</label>
-          <input type="number" name="expenses">
+          <input type="number" id="expense">
         </p>
       </form>
 
       <!--Display value in another control (widget)-->
-      <button onclick="affordFunction()">Calculate</button>
+      <button onclick="calculate()">Calculate</button>
       <br />
       <br />
-      <textarea id="result"></textarea>
+      <label id="result"></label>
+
     </div>
   </div>
 

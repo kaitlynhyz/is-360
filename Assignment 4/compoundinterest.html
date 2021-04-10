@@ -25,6 +25,7 @@
       var rate = parseFloat(document.getElementById("nper").value);
       var fvalue = FV(value, interest, rate);
       var fv = fvalue.toFixed(2);
+
       document.getElementById('result').textContent = "The compound interest is $" + fv;
     }
   </script>
@@ -69,7 +70,6 @@
           <input type="number" id="rate">
         </p>
       </form>
-
 
       <button onclick="calculate()">Calculate Compound Interest</button>
       <br />

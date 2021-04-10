@@ -5,6 +5,31 @@
   <meta charset="utf-8">
   <title>Compound Interest</title>
   <link rel="stylesheet" href="./css/style.css" type="text/css" />
+
+  <script>
+
+    const formatter = new Intl.NumberFormat('en-US',{
+      style: 'currency',
+      currency: 'USD',
+    })
+
+    function PMT(PV, i, n){
+      var x = ((i/12)*PV)
+      var y = (1+i)
+      var PMT = x/(1+(y*(Math.pow(y,n))))
+      return PMT;
+    }
+
+    function calculate(){
+      var value = parseFloat(document.getElementById("pv").value);
+      var period = parseFloat(document.getElementById("nper").value);
+      var interest = parseFloat(document.getElementById("rate").value);
+      var pmtvalue = PMT(value, period, interest);
+      var pmt = pmtvalue.toFixed(2);
+
+      document.getElementById('result').textContent = "The monthly payment amount is $" + pmt;
+    }
+  </script>
 </head>
 
 <body>
@@ -35,20 +60,23 @@
       <form class="payment">
         <p>
           <label>Initial Loan Amount (Dollars):</label><br />
-          <input type="number" name="loan">
+          <input type="number" id="pv">
         </p>
         <p>
           <label>Number of Periods (Years):</label><br />
-          <input type="number" name="periods">
+          <input type="number" id="nper">
         </p>
         <p>
           <label>Interest (Years):</label><br />
-          <input type="number" name="interestrate">
+          <input type="number" id="rate">
         </p>
-
-        <button onclick="payFunction()">Calculate Payment Amount (Monthly)</button>
-        <p id="payOutput"></p>
       </form>
+
+      <button onclick="calculate()">Calculate Payment Amount (Monthly)</button>
+      <br />
+      <br />
+      <label id="result"></label>
+
     </div>
   </div>
 
