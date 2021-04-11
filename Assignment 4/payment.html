@@ -13,18 +13,13 @@
       currency: 'USD',
     })
 
-    function PMT(PV, i, n){
-      var x = ((i/12)*PV)
-      var y = (1+i)
-      var PMT = x/(1+(y*(Math.pow(y,n))))
-      return PMT;
-    }
-
     function calculate(){
       var value = parseFloat(document.getElementById("pv").value);
       var period = parseFloat(document.getElementById("nper").value);
       var interest = parseFloat(document.getElementById("rate").value);
-      var pmtvalue = PMT(value, period, interest);
+
+
+      var pmtvalue = (value * (interest / 12)) / (1 - (1 + Math.pow((interest / 12)),(-period * 12)));
       var pmt = pmtvalue.toFixed(2);
 
       document.getElementById('result').textContent = "The monthly payment amount is $" + pmt;
