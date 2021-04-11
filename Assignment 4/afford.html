@@ -14,11 +14,31 @@
       })
 
       function calculate(){
-        var income = parseFloat(document.getElementById("income").value);
-        var expense = parseFloat(document.getElementById("expense").value);
-        var amount = --.toFixed(2);
+        var income = parseFloat(document.getElementById("grossincome").value);
+        var expense = parseFloat(document.getElementById("totalexpense").value);
 
-        document.getElementById('result').textContent = "The maximum affordable payment is $" + amount;
+        //Multipled income by 12 to reflect yearly gross income
+        var calIncome = (income * 12) * 0.29;
+
+        //Multiplied expense by 12 to reflect yearly expenses
+        var calAmount = 0.39 * ((income * 12) - (expense * 12));
+
+        //Convert to two decimal places
+        var conIncome = calIncome.toFixed(2);
+        var conAmount = calAmount.toFixed(2);
+
+        if (calIncome > calAmount){
+          document.getElementById('result').textContent = "The maximum affordable payment is $" + conAmount;
+
+          document.getElementById('percentage').textContent = "The percentage used was 39%";
+
+        }
+        else {
+          document.getElementById('result').textContent = "The maximum affordable payment is $" + conIncome;
+
+          document.getElementById('percentage').textContent = "The percentage used was 29%";
+        }
+
       }
 
   </script>
@@ -52,11 +72,11 @@
       <form class="afford">
         <p>
           <label>Gross Monthly Income:</label>
-          <input type="number" id="income">
+          <input type="number" id="grossincome">
         </p>
         <p>
-          <label>Total Expenses:</label>
-          <input type="number" id="expense">
+          <label>Total Monthly Expenses:</label>
+          <input type="number" id="totalexpense">
         </p>
       </form>
 
@@ -65,6 +85,8 @@
       <br />
       <br />
       <label id="result"></label>
+      <br />
+      <label id="percentage"></label>
 
     </div>
   </div>
