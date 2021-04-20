@@ -1,0 +1,281 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <style>
+        body {
+            margin: auto;
+            font-family: Arial;
+            width: 1024px;
+
+        }
+
+        td
+        {
+            margin: 10px;
+            padding: 10px;
+            color: darkblue;
+        }
+            body.blue {
+                color: darkblue;
+            }
+
+            body.red {
+                color: maroon;
+            }
+    </style>
+
+    <script>
+
+        //
+        // Here we show how to create a simple table dynamically using standard
+        // createElement() calls. We do not use the methods specific to HTMLTableElement.
+        // We do that in the 2nd. and 3rd. examples
+        //
+        function btnCreateTable_Click() {
+            // Get a reference to the <body> element. getElementsByTagName('body')
+            // returns a list of <body> elements. But there is only one so
+            // getElementsByTagName('body')[0]; gets the 0th element from the list.
+            var body = document.getElementsByTagName('body')[0];
+
+            // Create the <table> element. It's not attached to the DOM
+            // hierarchy at this point.
+            var tbl = document.createElement('table');
+
+            // Set table style and attribute. We could have just as well set the
+            // border with a style too.
+            tbl.style.width = '50%';
+            tbl.setAttribute('border', '1');
+
+            // Create the <tbody> element as a child of table.
+            var tbdy = document.createElement('tbody');
+
+            // The outer loop creates the rows.
+            for (var rows = 0; rows < 3; rows++) {
+                var tr = document.createElement('tr');
+
+                // The inner loop creates the cells.
+                for (var cells = 0; cells < 2; cells++) {
+                    {
+                        // Create the cell.
+                        var td = document.createElement('td');
+                        // Create the Text node that will be a child of the cell.
+                        td.appendChild(document.createTextNode('HELLO'))
+                        // Append the cell to the row.
+                        tr.appendChild(td)
+                    }
+                }
+                // Append the row to the table body.
+                tbdy.appendChild(tr);
+            }
+            // Append the table body to the table. The table is added as the
+            // last child so it will appear at the end of the document.
+            tbl.appendChild(tbdy);
+
+            // Append the table to the end of the body after reseting the contents
+            // of the <div> tag.
+            var tDivTable = document.getElementById("divPlaceholderTable");
+            // This is procedure I wrote that removes all children of a node.
+            RemoveAllChildren(tDivTable);
+            // Append the table.
+            tDivTable.appendChild(tbl);
+        }
+
+        // Create a table using the methods specific to the HTMLTable element.
+        function btnCreateTableDOM_Click() {
+            var body = document.getElementsByTagName('body')[0];
+            var tbl = document.createElement('table');
+            tbl.style.width = '50%';
+            tbl.setAttribute('border', '1');
+
+            // Create a table caption. createCaption is a member of HTMLTable.
+            var caption = tbl.createCaption();
+            caption.textContent = "Table Caption";
+
+            // Create a row and cell. Again, these are members of HTMLTable.
+            var currentRow = tbl.insertRow();
+            var currentCell = currentRow.insertCell(0)
+
+            // Create the text node for the cell.
+            var currentText = document.createTextNode("New Cell");
+            currentCell.appendChild(currentText);
+
+            // Append the table to the end of the body.
+            var tDivTable = document.getElementById("divPlaceholderTable");
+            RemoveAllChildren(tDivTable);
+            tDivTable.appendChild(tbl);
+        }
+
+
+        // A more realistic example that does compound interest using incremental
+        // interest rates.
+        function btnCreateTableApplied_Click() {
+            var body = document.getElementsByTagName('body')[0];
+            var tbl = document.createElement('table');
+            tbl.style.width = '50%';
+            tbl.setAttribute('border', '1');
+
+            var caption = tbl.createCaption();
+            caption.textContent = "The Perils of Interest";
+
+            // For brevity, i hard code the pv, number of periods, and the
+            // interest rates.
+            var pv = 10000;
+            var periods = 10;
+            var minInterest = 0.04;
+            var maxInterest = 0.10;
+            var incInterest = 0.01
+
+            // In the following, note that we docnt have to add the row to the table or
+            // the cell to the row. We do manually need to add the text nodes, however.
+            // Create the header.
+            var header = tbl.createTHead();
+            // Insert the first row.
+            var row = header.insertRow(0);
+            // Inser the first cell.
+            var cell = row.insertCell(0);
+            var currentText = document.createTextNode("Periods");
+
+            // Add the text to the cell.
+            cell.appendChild(currentText);
+
+            // Create the interest rate columns in the header row.
+            for (curInterest = minInterest; curInterest < maxInterest; curInterest += incInterest) {
+                // Insert a cell and put the current interest rate in it. Without arguments.
+                // insertCell adds the cell at the end of the row.
+                var cell = row.insertCell();
+                var currentHeadText = document.createTextNode(curInterest.toFixed(2));
+                cell.appendChild(currentHeadText)
+            }
+
+            // Create teh data rows. one row for each period
+            for (currentPeriod = 1; currentPeriod <= 10; currentPeriod++) {
+                var currentRow = tbl.insertRow();
+
+
+                // First column is the period number.
+                var currentCell = currentRow.insertCell(0)
+                var currentText = document.createTextNode(currentPeriod.toString());
+                currentCell.appendChild(currentText);
+
+                // And now the fv values for each column.
+                for (curInterest = minInterest; curInterest < maxInterest; curInterest += incInterest) {
+                    currentCell = currentRow.insertCell();
+                    // ** is new to EcmaScript to simplify calling pow.
+                    var fv = (pv * ((1 + curInterest) ** currentPeriod));
+                    var currentText = document.createTextNode(fv.toFixed(2));
+                    currentCell.appendChild(currentText);
+
+                }
+            }
+
+            // Append the table to the end of the body.
+            var tDivTable = document.getElementById("divPlaceholderTable");
+            RemoveAllChildren(tDivTable);
+            tDivTable.appendChild(tbl);
+        }
+
+        // Remove all child nodes from the current node.
+        function RemoveAllChildren(argNode) {
+            while (argNode.firstChild) {
+                argNode.removeChild(argNode.firstChild);
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Example to Create a New Table</h1>
+
+    <p>
+        There is a bit more to creating a table because there are many more elements to create and they must be
+        connected together in the DOM tree. There are two ways to do it. Either call
+        the general <code>createElement()</code> method or use the table specific elements of HTMLTableElement.
+    </p>
+
+    <p>Create create a table and set a style and attribute.</p>
+
+    <h2>Create a Table using General Tags</h2>
+<pre>
+            var tbl = document.createElement('table');
+            tbl.style.width = '50%';
+            tbl.setAttribute('border', '1');
+</pre>
+
+    <p>Let's assume that I am using a <code>&lt;tbody&gt;</code> tag. So i create it.</p>
+
+<pre>
+            var tbdy = document.createElement('tbody');
+</pre>
+
+    <p>
+        Then, for each row, i create the <code>&lt;tr&gt;</code> tag using a
+        <code>for loop.</code>. And inner <code>for</code> loop creates the cells.
+    </p>
+
+
+<pre>
+            // The outer loop creates the rows.
+            for (var rows = 0; rows < 3; rows++) {
+                var tr = document.createElement('tr');
+
+                // The inner loop creates the cells.
+                for (var cells = 0; cells < 2; cells++) {
+                    {
+                        // Create the cell.
+                        var td = document.createElement('td');
+                        // Create the Text node that will be a child of the cell.
+                        td.appendChild(document.createTextNode('HELLO'))
+                        // Append the cell to the row.
+                        tr.appendChild(td)
+                    }
+                }
+                // Append the row to the table body.
+                tbdy.appendChild(tr);
+            }
+</pre>
+
+    <p>
+        Note that I add the <code>text</code> node to the cell and the cell to the row.
+        After the cells have been added, the row is added to the body.
+    </p>
+
+    <p>The next statement adds the body to the table.</p>
+
+<pre>
+            tbl.appendChild(tbdy);
+</pre>
+
+    <p>And finally the table is added to a <code>&lt;div&gt;</code> tag placeholder.</p>
+
+    <h2>Create a Table using the HTMLTableElement</h2>
+
+
+    <hr />
+    <button id="btnCreateTable" onclick="btnCreateTable_Click()"
+            type="button">
+        Create Table using General Elements
+    </button>
+
+    <button id="btnCreateTableHtml" onclick="btnCreateTableDOM_Click()"
+            type="button">
+        Create Table using HTML Table
+    </button>
+
+    <button id="btnCreateTableApplied" onclick="btnCreateTableApplied_Click()"
+            type="button">
+        Create Table using HTML Table
+    </button>
+    <br />
+    <br />
+
+    <div id="divPlaceholderTable"></div>
+    <br />
+    <hr />
+    <br />
+
+</body>
+</html>

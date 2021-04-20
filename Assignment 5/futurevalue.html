@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Future Value</title>
+  <link rel="stylesheet" href="./css/style.css" type="text/css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+  <nav>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="amortize.html">Amortize</a>
+      <a class="active" href="futurevalue.html">Future Value</a>
+    </div>
+  </nav>
+
+  <header>
+    <ul class="breadcrumb">
+      <li><a href="#">assignment4</a></li>
+      <li><a href="#">kaitlynz</a></li>
+      <li>future value</li>
+    </ul>
+  </header>
+
+  <div class="columns">
+    <div class="left">
+      <p>Calculate the future value of a sum with a periodic investment.</p>
+    </div>
+
+    <div class="right">
+      <form class="compoundinterest">
+        <p>
+          <label>Initial Investment:</label>
+          <input type="number" id="investment">
+        </p>
+        <p>
+          <label>Monthly Deposit Amount:</label>
+          <input type="number" id="deposit">
+        </p>
+        <p>
+          <label>Annual Interest Rate (%):</label>
+          <input type="number" id="rate">
+        </p>
+        <p>
+          <label>Investment Term (Years):</label>
+          <input type="number" id="rate">
+        </p>
+      </form>
+
+      <button onclick="calculate()">Calculate Compound Interest</button>
+
+
+
+    </div>
+  </div>
+
+  <div class="output">
+    <label id="result"></label>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Beg. Balance</th>
+        <th>Payment</th>
+        <th>Interest</th>
+        <th>Principal</th>
+        <th>Balance</th>
+        <th>Period</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john</td>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <footer>
+    <img src="images/clownery.png" alt="logo">
+    <p>Kaitlyn Zhang &copy;</p>
+  </footer>
+
+  <hr />
+
+  <img src="images/futurevalue.PNG" alt="validation report for future value page">
+
+</body>
+</html>
