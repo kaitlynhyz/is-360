@@ -1,8 +1,7 @@
 function getValues(){
 
 	var balance = parseFloat(document.getElementById("pv").value);
-	var interestRate =
-		parseFloat(document.getElementById("rate").value/100.0);
+	var interestRate = parseFloat(document.getElementById("rate").value/100.0);
 	var terms = parseInt(document.getElementById("nper").value);
 
 	//output result
