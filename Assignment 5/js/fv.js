@@ -1,6 +1,7 @@
 function getValues(){
 
 	var balance = parseFloat(document.getElementById("pv").value);
+  var deposit = parseFloat(document.getElementById("deposit").value);
 	var interestRate = parseFloat(document.getElementById("rate").value/100.0);
 	var terms = parseInt(document.getElementById("nper").value);
 
@@ -9,10 +10,11 @@ function getValues(){
 
 	//validate inputs
 	var balVal = validateInputs(balance);
+  var depVal = validateInputs(deposit);
 	var intrVal = validateInputs(interestRate);
-	var termVal = validateInputs(terms);
+  var termVal = validateInputs(terms);
 
-	if (balVal && intrVal && termVal)
+	if (balVal && depVal && intrVal && termVal)
 	{
 		//Returns div string if inputs are valid
 		div.innerHTML += amort(balance, interestRate, terms);
@@ -34,8 +36,8 @@ function amort(balance, interestRate, terms)
   var result = "";
 
   //table headers
-	result += "<table border='2', align=center><tr><th>Beg. Balance</th><th>Payment</th>"+
-        "<th>Interest</th><th>Principal</th><th>Balance</th><th>Period</th>";
+	result += "<table border='2', align=center><tr><th>Period</th><th>Present Value</th>"+
+        "<th>Deposit</th><th>Interest</th><th>New Balance</th>";
 
 	for (var count = 0; count < yearterms; ++count)
 	{
@@ -47,15 +49,27 @@ function amort(balance, interestRate, terms)
 		//create table
 		result += "<tr align=center>";
 
+    //period
+		result += "<td>" + (count + 1) + "</td>";
+
     //beg. balance
     result += "<td> $" + balance.toFixed(2) + "</td>";
 
-    //payment
-    result += "<td> $" + payment.toFixed(2) + "</td>";
+    //recurring deposit
+
 
     //interest
 		interest = balance * monthlyRate;
 		result += "<td> $" + interest.toFixed(2) + "</td>";
+
+    //new balance
+
+
+
+
+    //payment
+
+    result += "<td> $" + payment.toFixed(2) + "</td>";
 
     //pricipal
 		monthlyPrincipal = payment - interest;
@@ -65,14 +79,12 @@ function amort(balance, interestRate, terms)
     newBalance = balance - monthlyPrincipal;
     result += "<td> $" + newBalance.toFixed(2) + "</td>";
 
-		//period
-		result += "<td>" + (count + 1) + "</td>";
-
 		//end table
 		result += "</tr>";
 
 		//update the balance for each loop iteration
 		balance = balance - monthlyPrincipal;
+
 	}
 
 	//return string and closes entire table

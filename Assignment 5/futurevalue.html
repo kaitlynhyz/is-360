@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <title>Future Value</title>
   <link rel="stylesheet" href="./css/style.css" type="text/css" />
+  <script src="./js/fv.js"></script>
 </head>
 
 <body>
@@ -31,73 +32,33 @@
     </div>
 
     <div class="right">
-      <form class="compoundinterest">
-        <p>
+      <form>
           <label>Initial Investment:</label>
-          <input type="number" id="investment">
-        </p>
-        <p>
+          <input type="number" id="pv">
+          <br />
+          <br />
           <label>Monthly Deposit Amount:</label>
           <input type="number" id="deposit">
-        </p>
-        <p>
+          <br />
+          <br />
           <label>Annual Interest Rate (%):</label>
           <input type="number" id="rate">
-        </p>
-        <p>
+          <br />
+          <br />
           <label>Investment Term (Years):</label>
-          <input type="number" id="rate">
-        </p>
+          <input type="number" id="nper">
+          <br />
+          <br />
+          <input type="button" value="Calculate Compound Interest" onclick="getValues()" />
       </form>
-
-      <button onclick="calculate()">Calculate Compound Interest</button>
-
-
-
     </div>
   </div>
 
   <div class="output">
-    <label id="result"></label>
-
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>Beg. Balance</th>
-        <th>Payment</th>
-        <th>Interest</th>
-        <th>Principal</th>
-        <th>Balance</th>
-        <th>Period</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john</td>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
-      </tr>
-      <tr>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td>mary@example.com</td>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td>mary@example.com</td>
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
-      </tr>
-    </tbody>
-  </table>
+    <h2>Future Value Schedule</h2>
+    <form>
+				<div id="Result"></div>
+		</form>
   </div>
 
   <footer>
