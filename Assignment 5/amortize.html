@@ -5,35 +5,7 @@
   <meta charset="utf-8">
   <title>Amortize</title>
   <link rel="stylesheet" href="./css/style.css" type="text/css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-  <script>
-
-      const formatter = new Intl.NumberFormat('en-US',{
-        style: 'currency',
-        currency: 'USD',
-      })
-
-      function FV(PV, i ,n){
-        var x = (1+i/100)
-        var FV = PV*(Math.pow(x,n))
-        return FV;
-      }
-
-      function calculate(){
-        var loan = parseFloat(document.getElementById("loanamount").value);
-        var interest = parseFloat(document.getElementById("rate").value);
-        var term = parseFloat(document.getElementById("years").value);
-        
-        var fvalue = FV(value, interest, rate);
-        var fv = fvalue.toFixed(2);
-
-        document.getElementById('result').textContent = "The compound interest is $" + fv;
-      }
-    }
-  </script>
+  <script type="text/javascript" src="./js/amort.js"></script>
 </head>
 
 <body>
@@ -48,7 +20,7 @@
 
   <header>
     <ul class="breadcrumb">
-      <li><a href="#">assignment4</a></li>
+      <li><a href="#">assignment5</a></li>
       <li><a href="#">kaitlynz</a></li>
       <li>amortize</li>
     </ul>
@@ -60,70 +32,26 @@
     </div>
 
     <div class="right">
-      <form class="compoundinterest">
-        <p>
-          <label>Loan Amount:</label>
-          <input type="number" id="loanamount">
-        </p>
-        <p>
-          <label>Annual Interest (%):</label>
-          <input type="number" id="rate">
-        </p>
-        <p>
-          <label>Loan Term (Years):</label>
-          <input type="number" id="years">
-        </p>
-      </form>
-
-      <button onclick="calculate()">Calculate Compound Interest</button>
-      <br />
-      <br />
-      <label id="result"></label>
-
+      <form>
+    				<label>Loan Amount:</label>
+    				<input type="number" id="pv" />
+    				<br />
+    				<label>Annual Interest Rate (%):</label>
+    				<input type="number" id="rate" />
+    				<br />
+    				<label>Loan Term (Years):</label>
+    				<input type="number" id="nper" />
+    				<br />
+    				<input type="button" value="Calculate" onclick="getValues()" />
+    		</form>
     </div>
   </div>
 
   <div class="output">
-    <h2>Bordered Table</h2>
-
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>Beg. Balance</th>
-        <th>Payment</th>
-        <th>Interest</th>
-        <th>Principal</th>
-        <th>Balance</th>
-        <th>Period</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john</td>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
-      </tr>
-      <tr>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td>mary@example.com</td>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td>mary@example.com</td>
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
-      </tr>
-    </tbody>
-  </table>
+    <h2>Loan Amortization Schedule</h2>
+    <form>
+				<div id="Result"></div>
+		</form>
   </div>
 
   <footer>
