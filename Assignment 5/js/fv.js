@@ -17,7 +17,7 @@ function getValues(){
 	if (balVal && depVal && intrVal && termVal)
 	{
 		//Returns div string if inputs are valid
-		div.innerHTML += amort(balance, interestRate, terms);
+		div.innerHTML += fv(balance, deposit, interestRate, terms);
 	}
 	else
 	{
@@ -26,14 +26,16 @@ function getValues(){
 	}
 }
 
-function amort(balance, interestRate, terms)
+function fv(balance, deposit, interestRate, terms)
 {
 
 	var monthlyRate = interestRate/12;
   var yearterms = terms * 12;
+	var recurring = deposit;
   var payment = balance * (monthlyRate/(1-Math.pow(
       1+monthlyRate, -yearterms)));
   var result = "";
+
 
   //table headers
 	result += "<table border='2', align=center><tr><th>Period</th><th>Present Value</th>"+
@@ -43,7 +45,6 @@ function amort(balance, interestRate, terms)
 	{
 
     var interest = 0;
-		var monthlyPrincipal = 0;
     var newBalance = 0;
 
 		//create table
@@ -56,34 +57,21 @@ function amort(balance, interestRate, terms)
     result += "<td> $" + balance.toFixed(2) + "</td>";
 
     //recurring deposit
+		result += "<td> $" + recurring.toFixed(2) + "</td>";
 
-
-    //interest
+    //current interest
 		interest = balance * monthlyRate;
 		result += "<td> $" + interest.toFixed(2) + "</td>";
 
     //new balance
-
-
-
-
-    //payment
-
-    result += "<td> $" + payment.toFixed(2) + "</td>";
-
-    //pricipal
-		monthlyPrincipal = payment - interest;
-		result += "<td> $" + monthlyPrincipal.toFixed(2) + "</td>";
-
-    //balance
-    newBalance = balance - monthlyPrincipal;
-    result += "<td> $" + newBalance.toFixed(2) + "</td>";
+		newBalance = balance + interest;
+		result += "<td> $" + newBalance.toFixed(2) + "</td>";
 
 		//end table
 		result += "</tr>";
 
 		//update the balance for each loop iteration
-		balance = balance - monthlyPrincipal;
+		balance = newBalance;
 
 	}
 
